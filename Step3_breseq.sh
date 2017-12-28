@@ -8,5 +8,5 @@ mkdir -p breseq_output
     echo $i
     export FASTQ_FILES=$(python sequencing_analysis_12_28_2017/file_name_utility.py $i)
     export REF_SEQ=~/w303_reference_genome/w303_ref_with_seq.gff
-    sbatch --job-name=breseq-${i} scripts/Step3_breseq.sbatch
+    sbatch --job-name=breseq-${i} sequencing_analysis_12_28_2017/Step3_breseq.sbatch
 #done
