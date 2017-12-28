@@ -4,8 +4,8 @@
 #SBATCH --mem 3750
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -o breseq.out      #File to which standard out will be written
-#SBATCH -e breseq.err      #File to which standard err will be written
+#SBATCH -o logs/breseq.%j.out      #File to which standard out will be written
+#SBATCH -e logs/breseq.%j.err      #File to which standard err will be written
 
 mkdir -p breseq_output/${i}
 
@@ -16,5 +16,6 @@ mkdir -p breseq_output/${i}
 
 for x in trimmed_fastq_files/${i}*.gz; do
 	gunzip $x
+done
 
 breseq -p -j 1 -o breseq_output/${i} -r $REF_SEQ ${FASTQ_FILES} > breseq_output/${i}.out 2> breseq_output/${i}.err
