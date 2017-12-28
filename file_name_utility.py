@@ -22,9 +22,8 @@ for line in file:
 			file_name_pieces = file_name.split('.')
 			file_name_root = file_name.split('.')[0]
 			
-			breseq_input_sample_paths[sample].append( 'merged_trimmed_fastqs/' + file_name_root + '.merged.fastq' )
-			breseq_input_sample_paths[sample].append( 'merged_trimmed_fastqs/' + file_name_root + '.unmerged_R1.fastq' )
-			breseq_input_sample_paths[sample].append( 'merged_trimmed_fastqs/' + file_name_root + '.unmerged_R2.fastq' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.paired.fastq' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.paired.fastq' )
 			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.unpaired.fastq' )
 			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.unpaired.fastq' )
 				
