@@ -1,6 +1,6 @@
 import sys
 
-file_in = 'scripts/sample_to_filenames_cluster.txt'
+file_in = 'sequencing_analysis_12_28_2017/sample_to_filenames_cluster.txt'
 file = open(file_in, 'r')
 
 unique_file_roots = []
