@@ -2,7 +2,7 @@
 
 mkdir -p breseq_output
 
-#for i in $(python scripts/file_name_utility.py sample_list); do
+#for i in $(python  sequencing_analysis_12_28_2017/file_name_utility.py sample_list); do
 #for i in ${"E1-1"}; do
     export i=E1-1
     echo $i
