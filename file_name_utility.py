@@ -22,10 +22,10 @@ for line in file:
 			file_name_pieces = file_name.split('.')
 			file_name_root = file_name.split('.')[0]
 			
-			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.paired.fastq' )
-			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.paired.fastq' )
-			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.unpaired.fastq' )
-			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.unpaired.fastq' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.paired' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.paired' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R1.unpaired' )
+			breseq_input_sample_paths[sample].append( 'trimmed_fastq_files/' + file_name_root + '.R2.unpaired' )
 				
 			if file_name_root not in unique_file_roots:
 				unique_file_roots.append(file_name_root)
