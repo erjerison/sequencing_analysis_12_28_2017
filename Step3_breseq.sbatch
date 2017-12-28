@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -p serial_requeue
 #SBATCH -t 47:00:00
-#SBATCH --mem 3750
+#SBATCH --mem 16000
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -o logs/breseq.%j.out      #File to which standard out will be written
