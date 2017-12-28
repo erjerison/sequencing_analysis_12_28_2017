@@ -1,0 +1,33 @@
+##Note: This is the layout of the gDNA that was library prepped and sequenced for the pleiotropy experiment. Each of these plates was indexed using the nextera dual indexing system, with N501-N508 corresponding to rows A-H, and N701-N712 corresponding to columns 1-12. Plate 1 was run as a single HiSeq lane. Plates 2 and 3 were each run on 1 HiSeq lane, except that column 10 of plate 2 was included with plate 3 to even out the number of samples (note that there aren’t overlapping indices in these sets).
+#‘E’ refers to the evolution environment, and clones are numbered 1-20 corresponding to wells B2-B11 and E2-E11 on the original evolution plates. Note that missing numbers indicate that this population dropped out during evolution due to biomek pipetting error.
+#The evolution environments are all based on SC at 30 C unless otherwise noted. E1, SC at 30 C; E2, 37C; E3, .2M NaCl; E4, .07% glucose; E5, pH 3.8; E6, pH 3; E7, pH 6; E8, pH 7.2; E9, .8 M NaCl; E10, galactose; E11, 21 C; E13, additional 2% ethanol; E14, additional 6% ethanol.
+>Plate1
+#	1	2	3	4	5	6	7	8	9	10	11	12
+A	E1-1	E1-2	E1-3	E1-4	E1-5	E1-6	E11-18	E1-8	E1-9	E1-10	E11-1	E11-9
+B	E1-11	E1-12	E1-13	E1-14	E1-15	E1-16	E1-17	E1-18	E1-19	E1-20	b	E11-10
+C	E9-1	E9-2	E9-3	E9-4	E9-5	E9-6	E9-7	E9-8	E9-9	E9-10	E11-3	E11-11
+D	E9-11	E9-12	E9-13	E9-14	E9-15	E9-16	E9-17	E9-18	E9-19	E9-20	E11-4	E11-12
+E	E3-1	E3-2	E3-3	E3-4	E3-5	E3-6	E3-7	E3-8	E3-9	E3-10	E11-5	E11-13
+F	E3-11	E3-12	E3-13	E3-14	E3-15	E3-16	E3-17	E3-18	E3-19	E3-20	E11-6	E11-14
+G	E2-1	E2-2	E2-3	E2-4	E2-5	E2-6	E2-7	E2-8	E2-9	E2-10	E11-7	E11-16
+H	E2-11	E2-12	E2-13	E2-14	E2-15	E2-16	E2-17	E2-18	E2-19	E2-20	E11-8	E11-17
+>Plate2
+#	1	2	3	4	5	6	7	8	9	10	11	12
+A	b	b	E5-3	E5-4	E5-5	E5-6	E5-7	E5-8	E5-9	E5-10	E4-1	E4-9
+B	E5-11	E5-12	E5-13	E5-14	E5-15	E4-17	E5-17	E5-18	E5-19	E5-20	E4-2	E4-10
+C	E7-1	E7-2	E7-3	E7-4	E7-5	E7-6	E7-7	E7-8	E7-9	E7-10	E4-3	E4-11
+D	E7-11	E7-12	E7-13	E7-14	E7-15	E4-18	E7-17	E7-18	E7-19	E7-20	E4-4	E4-12
+E	E6-1	E6-2	E6-3	E6-4	E6-5	E6-6	E6-7	E6-8	E6-9	E4-19	E4-5	E4-13
+F	E6-11	E6-12	E6-13	E6-14	E4-20	E6-16	E6-17	E6-18	E6-19	E6-20	E4-6	E4-14
+G	E8-1	E8-2	E8-3	E8-4	E8-5	E8-6	E8-7	E8-8	E8-9	E8-10	E4-7	E4-15
+H	b	E8-12	E8-13	b	E8-15	E8-16	E8-17	E8-18	E8-19	E8-20	E4-8	E4-16
+>Plate3
+#	1	2	3	4	5	6	7	8	9	10	11	12
+A	E10-1	E10-9	E10-18	E13-6	E13-14	E14-2	E14-10	E14-18	E5-1			
+B	E10-2	E10-10	E10-19	E13-7	E13-15	E14-3	E14-11	E14-19	E5-2				
+C	E10-3	E10-11	E10-20	E13-8	E13-16	E14-4	E14-12	E14-20	E8-11				
+D	E10-4	E10-12	E13-1	E13-9	E13-19	E14-5	E14-13	E11-19	E8-14				
+E	E10-5	E10-13	E13-2	E13-10	E13-17	E14-6	E14-14	E11-20				
+F	E10-6	E10-14	E13-3	E13-11	E13-18	E14-7	E14-15	b				
+G	E10-7	E10-15	E13-4	E13-12	E13-20	E14-8	E14-16	b				
+H	E10-8	E10-17	E13-5	E13-13	E14-1	E14-9	E14-17	E11-2				
