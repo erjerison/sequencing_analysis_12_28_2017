@@ -4,8 +4,8 @@
 #SBATCH --mem-per-cpu 16000
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -o trim.out      #File to which standard out will be written
-#SBATCH -e trim.err      #File to which standard err will be written
+#SBATCH -o logs/trim.out      #File to which standard out will be written
+#SBATCH -e logs/trim.err      #File to which standard err will be written
 
 #Because of the bzipped files, we will unzip before trimming
 ##Some of the files are gzipped
