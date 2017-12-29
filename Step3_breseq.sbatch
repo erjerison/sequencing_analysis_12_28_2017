@@ -14,10 +14,11 @@ mkdir -p breseq_output/${i}
 #1. unpaired reads that are the output of Trimmomatic. These are reads where only 1 read of the pair was retained because the reads completely overlapped.
 #2. paired reads that are the output of Trimmomatic. Note that we are not merging overlapping paired-end reads because bases that disagree due to an error on one read or the other may be hard to call at this stage, but easier to call once we have piled up all reads that align to this base.
 
-if [ -f trimmed_fastq_files/${i}*.gz ]; then
-	for x in trimmed_fastq_files/${i}*.gz; do
+
+for x in trimmed_fastq_files/${i}*.gz; do
+	if [ -e "$x" ]; do
 		gunzip $x
-	done
-fi
+	fi
+done
 
 breseq -p -j 1 -o breseq_output/${i} -r $REF_SEQ ${FASTQ_FILES} > breseq_output/${i}.out 2> breseq_output/${i}.err
