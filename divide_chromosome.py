@@ -3,7 +3,7 @@ import os
 import numpy
 
 def get_chrom_dict():
-	ref_idx = '~/w303_reference_genome/w303_ref.fasta.fai'
+	ref_idx = "/n/home01/ejerison/w303_reference_genome/w303_ref.fasta.fai"
 
 	file=open(ref_idx,'r')
 	chrom_dict={}
