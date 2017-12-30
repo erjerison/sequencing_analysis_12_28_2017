@@ -2,7 +2,7 @@
 #export population=$1
 #export sequence_type=$2
 export bam_files=""
-export reference_file=breseq_output/bam_files/w303_ref.fasta
+export reference_file=~/w303_reference_genome/w303_ref.fasta
 mkdir combined_mut_files
 
 export sample_list=$(python sequencing_analysis_12_28_2017/file_name_utility.py sample_list)
