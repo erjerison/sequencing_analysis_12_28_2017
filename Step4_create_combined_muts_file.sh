@@ -5,7 +5,7 @@ export bam_files=""
 export reference_file=breseq_output/bam_files/w303_ref.fasta
 mkdir combined_mut_files
 
-export sample_list=$(python sequencing_analysis_12_28_2017/python_name_change_utility.py sample_list)
+export sample_list=$(python sequencing_analysis_12_28_2017/file_name_utility.py sample_list)
 for i in ${sample_list}; do
     export bam_files="${bam_files} breseq_output/bam_files/${i}.bam"
 done
