@@ -40,9 +40,9 @@ elif sys.argv[1] == 'sample_list':
 	for sample in sorted(breseq_input_sample_paths.keys()):
 		print sample
 			
-elif sys.argv[1] == 'trial': ##Default behavior: try one job
+elif sys.argv[1] == 'trial':
 	print unique_file_roots[0]
-
+	
 else:
 	key = sys.argv[1]
 	for file_name in breseq_input_sample_paths[key]:
