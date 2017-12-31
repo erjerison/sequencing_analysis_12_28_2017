@@ -1,6 +1,6 @@
 import numpy
 import sys
-import python_name_change_utility
+import file_name_utility
 
 reference_strs = ['.', ',']
 snp_strs = ['A','C','T','G', 'N','*'] #, 'a','c','t','g', 'n']
@@ -26,7 +26,7 @@ mpileup_file = sys.stdin
 # 		sample_list.append(entry)
 # print ", ".join(entry for entry in sample_list)	
 
-sample_list = python_name_change_utility.print_all_names_with_indexes()
+sample_list = file_name_utility.print_all_names_with_indexes()
 print ", ".join(entry for entry in sample_list)
 
 if len(sys.argv) > 3:
