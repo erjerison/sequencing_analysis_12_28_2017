@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH -p serial_requeue
-#SBATCH -t 2:00:00
+#SBATCH -t 47:00:00
 #SBATCH --mem 7400
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -o create_part_muts.out      #File to which standard out will be writte
-#SBATCH -e create_part_muts.err      #File to which standard err will be written
+#SBATCH -o logs/create_part_muts.%j.out      #File to which standard out will be writte
+#SBATCH -e logs/create_part_muts.%j.err      #File to which standard err will be written
 
 export region="${chrom}:${start_position}-${end_position}"
 echo $region

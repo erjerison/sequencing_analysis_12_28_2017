@@ -125,7 +125,5 @@ for line in mpileup_file:
                 print ", ".join([chromosome, str(position), ref, allele, " ".join(str(a) for a in alts), " ".join(str(d) for d in depths)])
 	
 total_mean_depth = total_mean_depth/float(num_lines)
-depth_file = open('avg_depth.txt','a')
-depth_file.write(chromosome + ' region ending at ' + str(position) + ',overall mean depth, ' + str(total_mean_depth))
-depth_file.close()
+sys.stdout.write(chromosome + ' region ending at ' + str(position) + ',overall mean depth, ' + str(total_mean_depth))
 	
