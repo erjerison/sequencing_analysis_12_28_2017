@@ -17,17 +17,8 @@ deletion_int = ord('-')
 
 mpileup_file = sys.stdin
 
-#population = sys.argv[1]
-
-# seg_dict = clones_to_wells.clone_to_plate_dict()
-# sample_list = []
-# for key in sorted(seg_dict.keys()):
-# 	for entry in seg_dict[key][1]:
-# 		sample_list.append(entry)
-# print ", ".join(entry for entry in sample_list)	
-
-sample_list = file_name_utility.print_all_names_with_indexes()
-print ", ".join(entry for entry in sample_list)
+#sample_list = file_name_utility.print_all_names_with_indexes()
+#print ", ".join(entry for entry in sample_list)
 
 if len(sys.argv) > 3:
     first_position = long(sys.argv[2])
@@ -119,11 +110,11 @@ for line in mpileup_file:
             # merged_alts = numpy.array([alt_map[t] for t in merged_times])
             # merged_depths = numpy.array([depth_map[t] for t in merged_times])
             
-            if numpy.any((alts >= 4)*(depths>=2)*(alts >= 0.05*depths)):
+            if numpy.any((alts >= 3)*(depths>=2)*(alts >= 0.1*depths)):
                 if allele in indel_strs:
                     allele = ("%s%s" % (allele,additional_indel_allele))
                 print ", ".join([chromosome, str(position), ref, allele, " ".join(str(a) for a in alts), " ".join(str(d) for d in depths)])
 	
 total_mean_depth = total_mean_depth/float(num_lines)
-sys.stdout.write(chromosome + ' region ending at ' + str(position) + ',overall mean depth, ' + str(total_mean_depth))
+sys.stderr.write(chromosome + ' region ending at ' + str(position) + ',overall mean depth, ' + str(total_mean_depth))
 	
