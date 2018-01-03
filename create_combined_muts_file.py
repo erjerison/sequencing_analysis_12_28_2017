@@ -1,6 +1,6 @@
 import numpy
 import sys
-import file_name_utility
+#import file_name_utility
 
 reference_strs = ['.', ',']
 snp_strs = ['A','C','T','G', 'N','*'] #, 'a','c','t','g', 'n']

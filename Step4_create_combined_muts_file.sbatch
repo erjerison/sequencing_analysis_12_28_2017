@@ -9,8 +9,8 @@
 
 export region="${chrom}:${start_position}-${end_position}"
 echo $region
-samtools mpileup -q10 -f ${reference_file} -r ${chrom}:${start_position}-${end_position} ${bam_files} > combined_mut_files/combined_muts_${chrom}_${start_position}.pileup
-echo ${sample_list} > combined_mut_files/combined_muts_${chrom}_${start_position}.txt
+#samtools mpileup -q10 -f ${reference_file} -r ${chrom}:${start_position}-${end_position} ${bam_files} > combined_mut_files/combined_muts_${chrom}_${start_position}.pileup
+#echo ${sample_list} > combined_mut_files/combined_muts_${chrom}_${start_position}.txt
 cat combined_mut_files/combined_muts_${chrom}_${start_position}.pileup | python sequencing_analysis_12_28_2017/create_combined_muts_file.py ${start_position} ${end_position} >> combined_mut_files/combined_muts_${chrom}_${start_position}.txt
 
 #bzcat realigned_timecourse.bz2 | python split_timecourse.py ${start_position} ${end_position} > data/timecourse_files/${start_position}_timecourse.txt 
