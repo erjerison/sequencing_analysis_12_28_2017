@@ -1,0 +1,2 @@
+#Low_coverage_clone_list (clones below 5x coverage at potential variant sites)
+E10-6, E2-17, E3-8, E4-13, E4-15, E4-3, E5-10, E5-4, E5-6, E6-11, E8-14

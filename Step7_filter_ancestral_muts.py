@@ -1,22 +1,9 @@
 import numpy
 import sys
 import matplotlib.pylab as pt
-import python_name_change_utility
+from file_name_utility2 import sample_list
 
-samples = python_name_change_utility.print_all_names_with_indexes()
-	
-seg_index_dict = {}
-	
-for i in range(len(samples)):
-	seg_id = samples[i].split('_')[0]
-		
-	if seg_id in seg_index_dict:
-		seg_index_dict[seg_id].append(i)
-	else:
-		seg_index_dict[seg_id] = []
-		seg_index_dict[seg_id].append(i)
-
-print seg_index_dict
+samples = sample_list()
 
 chr_trans_dict = {'chrI':'chr01','chrII':'chr02','chrIII':'chr03','chrIV':'chr04','chrV':'chr05','chrVI':'chr06','chrVII':'chr07','chrVIII':'chr08','chrIX':'chr09','chrX':'chr10','chrXI':'chr11','chrXII':'chr12','chrXIII':'chr13','chrXIV':'chr14','chrXV':'chr15','chrXVI':'chr16'}
 
@@ -51,14 +38,14 @@ for chr in chr_trans_dict:
 		alt_fracs = alt_list/cov_list
 		
 		#print alt_fracs
-		if (numpy.sum(alt_fracs[~numpy.isnan(alt_fracs)] > .5) > .5 and numpy.nansum(numpy.round(alt_fracs)) < 224.5):
-			#first filter: the mutation cannot be at > 50% in 225 or more lines (90% of all lines). This subtracts all ancestral mutations.
+		if (numpy.sum(alt_fracs[~numpy.isnan(alt_fracs)] > .5) > .4 and numpy.nansum(numpy.round(alt_fracs)) < 124.5):
+			#first filter: the mutation cannot be at > 40% in 125 or more lines (50% of all lines). This subtracts all ancestral mutations. It also eliminates alignment artifacts where a duplicated region misaligned, creating a set of polymorphisms that appear to be at 50% frequency in all the lines. 
 			#second filter: filter out alignment artifacts. These come in two types. The first (more common) type is that you sometimes see a minority allele in all the descendants of particular segregants at a particular locus.
 			#I believe this happens because there is a nearby indel that is causing alignment errors at a nearby site. This problem may be fixable by creating a new reference for each kruglyak segregant and aligning
-			#to that. For now, I am going to filter out all sites where at least 5 different populations show polymorphism in 10% of the reads. This will also take care of the other type of alignment artifact that we usually see,
+			#to that. For now, I am going to filter out all sites where at least 10 different populations show polymorphism in 10% of the reads. This will also take care of the other type of alignment artifact that we usually see,
 			#where some regions are just error-prone presumably due to similarity to other regions and hence mis-alignment.
 			minority_allele_list.append(numpy.sum(alt_fracs[~numpy.isnan(alt_fracs)] > .1))
-			if numpy.sum(alt_fracs[~numpy.isnan(alt_fracs)] > .1) < 4.5:
+			if numpy.sum(alt_fracs[~numpy.isnan(alt_fracs)] > .1) < 9.5:
 		
 				#print numpy.sum(alt_fracs > .1)
 			
@@ -66,7 +53,7 @@ for chr in chr_trans_dict:
 		
 				binary_line = ('\t').join(str(a) for a in numpy.round(alt_fracs))
 				preamble = (',').join(str(p) for p in loc_ref_alt)
-				file_out2.write(preamble + binary_line + '\n')
+				file_out2.write(preamble + ',' + binary_line + '\n')
 			
 	file_out.close()
 	file_out2.close()
